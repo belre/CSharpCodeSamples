@@ -20,36 +20,36 @@ namespace ScreenFontList
 
     public class TextOutGdi
     {
-      [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
+      [DllImport("gdi32.dll")]
       public static extern bool TextOut(IntPtr hdc, int nXStart, int nYStart,
         string lpString, int cbString);
 
-      [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
+      [DllImport("gdi32.dll")]
       public static extern UInt32 GetFontData(IntPtr hdc, UInt32 dwTable, UInt32 dwOffset, Byte[] pvBuffer, UInt32 cjBuffer);
 
       public static readonly int BKMODE_TRANSPARENT = 1;
 
-      [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
+      [DllImport("gdi32.dll", CharSet = CharSet.Unicode)]
       public static extern IntPtr CreateFontIndirect(FontListGdi.LOGFONT lf);
 
 
-      [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
+      [DllImport("gdi32.dll")]
       public static extern int SetBkColor(IntPtr hdc, uint crColor);
 
 
-      [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
+      [DllImport("gdi32.dll")]
       public static extern int SetBkMode(IntPtr hdc, int crColor);
 
-      [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
+      [DllImport("gdi32.dll")]
       public static extern int SetTextColor(System.IntPtr hdc, int flag);
 
-      [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
+      [DllImport("gdi32.dll")]
       public static extern bool GetTextExtentPoint32(IntPtr hdc, string lpString, int cbString, out Size lpSize);
 
-      [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
+      [DllImport("gdi32.dll")]
       public static extern bool DeleteObject(IntPtr hObject);
 
-      [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
+      [DllImport("gdi32.dll")]
       public static extern IntPtr SelectObject(IntPtr hdc, IntPtr hgdiobj);
 
       public enum StockObjects
@@ -78,9 +78,6 @@ namespace ScreenFontList
 
       [DllImport("gdi32.dll")]
       public static extern IntPtr GetStockObject(StockObjects fnObject);
-
-      [DllImport("user32.dll", CharSet = CharSet.Auto)]
-      public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
     }
   }
 

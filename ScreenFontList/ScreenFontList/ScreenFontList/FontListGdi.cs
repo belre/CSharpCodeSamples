@@ -13,9 +13,6 @@ namespace ScreenFontList
   {
     public delegate int EnumFontExDelegate(ref ENUMLOGFONTEX lpelfe, ref NEWTEXTMETRICEX lpntme, int FontType, int lParam);
 
-    [DllImport(("gdi32.dll"))]
-    public static extern IntPtr CreateFontIndirect(LOGFONT log_font);
-
 
     [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
     public static extern int EnumFontFamiliesEx(IntPtr hdc,

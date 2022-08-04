@@ -32,6 +32,7 @@ namespace ScreenFontList
       this.components = new System.ComponentModel.Container();
       this.button1 = new System.Windows.Forms.Button();
       this.dataGridView1 = new System.Windows.Forms.DataGridView();
+      this.LogFontBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.faceNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,10 +49,9 @@ namespace ScreenFontList
       this.clipPrecisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.qualityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.pitchAndFamilyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.LogFontBindingSource = new System.Windows.Forms.BindingSource(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.LogFontBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
       // button1
@@ -95,6 +95,12 @@ namespace ScreenFontList
       this.dataGridView1.Size = new System.Drawing.Size(1164, 394);
       this.dataGridView1.TabIndex = 2;
       this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+      // 
+      // LogFontBindingSource
+      // 
+      this.LogFontBindingSource.AllowNew = false;
+      this.LogFontBindingSource.DataSource = typeof(ScreenFontList.LogFontWrapped);
+      this.LogFontBindingSource.CurrentChanged += new System.EventHandler(this.TriggerPreview);
       // 
       // pictureBox1
       // 
@@ -227,12 +233,6 @@ namespace ScreenFontList
       this.pitchAndFamilyDataGridViewTextBoxColumn.ReadOnly = true;
       this.pitchAndFamilyDataGridViewTextBoxColumn.Width = 137;
       // 
-      // LogFontBindingSource
-      // 
-      this.LogFontBindingSource.AllowNew = false;
-      this.LogFontBindingSource.DataSource = typeof(ScreenFontList.LogFontWrapped);
-      this.LogFontBindingSource.CurrentChanged += new System.EventHandler(this.TriggerPreview);
-      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -248,8 +248,8 @@ namespace ScreenFontList
       this.Text = "Form1";
       this.Load += new System.EventHandler(this.Form1_Load);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.LogFontBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -259,6 +259,8 @@ namespace ScreenFontList
     private System.Windows.Forms.Button button1;
     private System.Windows.Forms.BindingSource LogFontBindingSource;
     private System.Windows.Forms.DataGridView dataGridView1;
+    private System.Windows.Forms.PictureBox pictureBox1;
+    private System.Windows.Forms.TextBox textBox1;
     private System.Windows.Forms.DataGridViewTextBoxColumn faceNameDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn heightDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn widthDataGridViewTextBoxColumn;
@@ -273,8 +275,6 @@ namespace ScreenFontList
     private System.Windows.Forms.DataGridViewTextBoxColumn clipPrecisionDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn qualityDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn pitchAndFamilyDataGridViewTextBoxColumn;
-    private System.Windows.Forms.PictureBox pictureBox1;
-    private System.Windows.Forms.TextBox textBox1;
   }
 }
 

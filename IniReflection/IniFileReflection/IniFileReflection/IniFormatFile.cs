@@ -470,18 +470,8 @@ namespace IniFileReflection
       NotifyAfter(ReadingFormatStatus.EndOfFile);
     }
 
-    protected string EncodingIniKey = "Encoding";
 
-    /// <summary>
-    /// sourceからデータを抽出する
-    /// </summary>
-    /// <param name="source_text"></param>
-    public virtual void ReadFromFile(string path, Encoding encoding, CultureInfo default_culture)
-    {
-      // データを全て読み取る
-      var source_text = System.IO.File.ReadAllText(path, encoding);
-      ReadFromText(source_text, encoding, default_culture);
-    }
+
 
     /// <summary>
     /// iniファイルのSectionブロックの名前の取得

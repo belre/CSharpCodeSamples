@@ -41,7 +41,15 @@
           </Style>
         </local:UserStyleBehaviorTextColumn.CellStyle>
         <local:UserStyleBehaviorTextColumn.CellEditingStyle>
-          <Style/>
+          <Style TargetType="{x:Type TextBox}">
+            <Setter Property="local:UserStyleBehaviorCollection.GeneratedEditingCellBehaviors">
+              <Setter.Value>
+                <local:UserStyleBehaviorCollection>
+                  <local:KeyOnlyNumericBehavior />
+                </local:UserStyleBehaviorCollection>
+              </Setter.Value>
+            </Setter>
+          </Style>
         </local:UserStyleBehaviorTextColumn.CellEditingStyle>
       </local:UserStyleBehaviorTextColumn>
     </DataGrid.Columns>

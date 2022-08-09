@@ -28,8 +28,8 @@
       </local:BehaviorTextColumn>
 
 
-      <local:BehaviorInteractionTextColumn Header="Behavior2の列"
-                               Binding="{Binding TriggerItem}">
+      <local:BehaviorInteractionTextColumn Header="Behavior Interactionの列"
+                               Binding="{Binding BehaviorInteractionItem}">
         <local:BehaviorInteractionTextColumn.CellStyle>
           <Style TargetType="{x:Type DataGridCell}">
             <Setter Property="local:BehaviorInteractionCollection.GeneratedCellBehaviors">

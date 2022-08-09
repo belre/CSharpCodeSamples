@@ -23,13 +23,13 @@ namespace CustomizedDataGrid001
       set;
     }
 
-    public string TriggerItem
+    public string BehaviorItem
     {
       get;
       set;
     }
 
-    public string BehaviorItem
+    public string BehaviorInteractionItem
     {
       get;
       set;

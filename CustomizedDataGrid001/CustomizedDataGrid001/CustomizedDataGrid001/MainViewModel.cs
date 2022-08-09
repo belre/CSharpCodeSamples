@@ -26,15 +26,15 @@ namespace CustomizedDataGrid001
         {
           DefaultItem = "デフォルト",
           CodeBehindItem = "コードビハインド", 
-          TriggerItem = "トリガー",
-          BehaviorItem = "ビヘイビア"
+          BehaviorItem = "ビヘイビア",
+          BehaviorInteractionItem = "ビヘイビアインタラクション",
         },
         new BranchViewModel()
         {
           DefaultItem = "DEFAULT",
           CodeBehindItem = "CODEBEHIND",
-          TriggerItem = "TRIGGER",
-          BehaviorItem = "BEHAVIOR"
+          BehaviorItem = "BEHAVIOR",
+          BehaviorInteractionItem = "BEHAVIOR INTERACTION",
         }
       };
     }

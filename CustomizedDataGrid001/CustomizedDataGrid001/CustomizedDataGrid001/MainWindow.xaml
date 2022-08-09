@@ -4,9 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CustomizedDataGrid001"
+        xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+  <Window.DataContext>
+    <local:MainViewModel />
+  </Window.DataContext>
 
-    </Grid>
+  <DataGrid ItemsSource="{Binding Items}" 
+            AutoGenerateColumns="False">
+    <DataGrid.Columns>
+      <DataGridTextColumn Header="デフォルトの列"
+                          Binding="{Binding DefaultItem}">
+        
+      </DataGridTextColumn>
+      
+      <local:CodeBehindTextColumn Header="コードビハインドの列" 
+                                  Binding="{Binding CodeBehindItem}">
+      </local:CodeBehindTextColumn>
+
+      <local:BehaviorTextColumn Header="Behaviorの列"
+                               Binding="{Binding BehaviorItem}">
+      </local:BehaviorTextColumn>
+    </DataGrid.Columns>
+  </DataGrid>
 </Window>

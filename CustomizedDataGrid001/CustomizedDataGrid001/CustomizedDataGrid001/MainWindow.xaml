@@ -16,15 +16,14 @@
     <DataGrid.Columns>
       <DataGridTextColumn Header="デフォルトの列"
                           Binding="{Binding DefaultItem}">
-        
       </DataGridTextColumn>
       
-      <local:CodeBehindTextColumn Header="コードビハインドの列" 
+      <local:CodeBehindTextColumn Header="TextColumnコードビハインドの列" 
                                   Binding="{Binding CodeBehindItem}">
       </local:CodeBehindTextColumn>
 
       <local:BehaviorTextColumn Header="Behaviorの列"
-                               Binding="{Binding BehaviorItem}">
+                                Binding="{Binding BehaviorItem}">
       </local:BehaviorTextColumn>
 
 
@@ -42,15 +41,7 @@
           </Style>
         </local:UserStyleBehaviorTextColumn.CellStyle>
         <local:UserStyleBehaviorTextColumn.CellEditingStyle>
-          <Style TargetType="{x:Type TextBox}">
-            <Setter Property="local:UserStyleBehaviorCollection.GeneratedEditingCellBehaviors">
-              <Setter.Value>
-                <local:UserStyleBehaviorCollection>
-                  <local:KeyOnlyNumericBehavior />
-                </local:UserStyleBehaviorCollection>
-              </Setter.Value>
-            </Setter>
-          </Style>
+          <Style/>
         </local:UserStyleBehaviorTextColumn.CellEditingStyle>
       </local:UserStyleBehaviorTextColumn>
     </DataGrid.Columns>

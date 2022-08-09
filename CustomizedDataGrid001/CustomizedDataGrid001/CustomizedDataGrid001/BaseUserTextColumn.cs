@@ -12,10 +12,10 @@ namespace CustomizedDataGrid001
   public class BaseUserTextColumn : DataGridTextColumn
   {
     /// <summary>
-    /// キーが生成されるときに実行される
+    /// 列が生成されるときに実行される
     /// </summary>
-    /// <param name="cell"></param>
-    /// <param name="dataItem"></param>
+    /// <param name="cell">セル</param>
+    /// <param name="dataItem">Context</param>
     /// <returns></returns>
     protected override FrameworkElement GenerateElement(DataGridCell cell, object dataItem)
     {
@@ -23,14 +23,15 @@ namespace CustomizedDataGrid001
     }
 
     /// <summary>
-    /// キーが編集されるときに実行される
+    /// 列が編集されるときに実行される
     /// </summary>
-    /// <param name="cell"></param>
-    /// <param name="dataItem"></param>
+    /// <param name="cell">セル</param>
+    /// <param name="dataItem">Context</param>
     /// <returns></returns>
     protected override FrameworkElement GenerateEditingElement(DataGridCell cell, object dataItem)
     {
-      return base.GenerateEditingElement(cell, dataItem);
+      var textbox = (TextBox)base.GenerateEditingElement(cell, dataItem);
+      return textbox;
     }
   }
 }

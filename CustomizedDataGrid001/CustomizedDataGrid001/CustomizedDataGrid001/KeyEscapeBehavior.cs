@@ -12,7 +12,7 @@ namespace CustomizedDataGrid001
   {
     protected override void OnAttached()
     {
-      AssociatedObject.PreviewKeyDown += AssociatedObject_PreviewKeyDown; ;
+      AssociatedObject.PreviewKeyDown += AssociatedObject_PreviewKeyDown;
     }
 
 

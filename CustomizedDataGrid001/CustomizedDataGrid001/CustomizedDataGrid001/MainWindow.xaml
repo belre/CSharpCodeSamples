@@ -26,6 +26,33 @@
       <local:BehaviorTextColumn Header="Behaviorの列"
                                Binding="{Binding BehaviorItem}">
       </local:BehaviorTextColumn>
+
+
+      <local:BehaviorInteractionTextColumn Header="Behavior2の列"
+                               Binding="{Binding TriggerItem}">
+        <local:BehaviorInteractionTextColumn.CellStyle>
+          <Style TargetType="{x:Type DataGridCell}">
+            <Setter Property="local:BehaviorInteractionCollection.GeneratedCellBehaviors">
+              <Setter.Value>
+                <local:BehaviorInteractionCollection>
+                  <local:KeyEscapeBehavior />
+                </local:BehaviorInteractionCollection>
+              </Setter.Value>
+            </Setter>
+          </Style>
+        </local:BehaviorInteractionTextColumn.CellStyle>
+        <local:BehaviorInteractionTextColumn.CellEditingStyle>
+          <Style TargetType="{x:Type TextBox}">
+            <Setter Property="local:BehaviorInteractionCollection.GeneratedEditingCellBehaviors">
+              <Setter.Value>
+                <local:BehaviorInteractionCollection>
+                  <local:KeyOnlyNumericBehavior />
+                </local:BehaviorInteractionCollection>
+              </Setter.Value>
+            </Setter>
+          </Style>
+        </local:BehaviorInteractionTextColumn.CellEditingStyle>
+      </local:BehaviorInteractionTextColumn>
     </DataGrid.Columns>
   </DataGrid>
 </Window>

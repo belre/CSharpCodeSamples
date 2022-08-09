@@ -9,7 +9,7 @@ using Microsoft.Xaml.Behaviors;
 
 namespace CustomizedDataGrid001
 {
-  public class BehaviorInteractionTextColumn : DataGridTextColumn
+  public class UserStyleBehaviorTextColumn : DataGridTextColumn
   {
     public Style CellEditingStyle 
     { 

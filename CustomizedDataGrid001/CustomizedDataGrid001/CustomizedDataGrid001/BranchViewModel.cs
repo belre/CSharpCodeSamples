@@ -29,7 +29,7 @@ namespace CustomizedDataGrid001
       set;
     }
 
-    public string BehaviorInteractionItem
+    public string UserStyleBehaviorItem
     {
       get;
       set;

@@ -8,18 +8,18 @@ using Microsoft.Xaml.Behaviors;
 
 namespace CustomizedDataGrid001
 {
-  public class BehaviorInteractionCollection : FreezableCollection<Behavior>
+  public class UserStyleBehaviorCollection : FreezableCollection<Behavior>
   {
     public static readonly DependencyProperty GeneratedCellBehaviorsProperty =
       DependencyProperty.RegisterAttached(
         "GeneratedCellBehaviors",
-        typeof(BehaviorInteractionCollection),
-        typeof(BehaviorInteractionCollection),
+        typeof(UserStyleBehaviorCollection),
+        typeof(UserStyleBehaviorCollection),
           new PropertyMetadata((sender, e) =>
           {
             if (e.OldValue == e.NewValue) { return; }
 
-            var value = e.NewValue as BehaviorInteractionCollection;
+            var value = e.NewValue as UserStyleBehaviorCollection;
             if (value == null) { return; }
 
             var behaviors = Interaction.GetBehaviors(sender);
@@ -33,13 +33,13 @@ namespace CustomizedDataGrid001
     public static readonly DependencyProperty GeneratedEditingCellBehaviorsProperty =
       DependencyProperty.RegisterAttached(
         "GeneratedEditingCellBehaviors",
-        typeof(BehaviorInteractionCollection),
-        typeof(BehaviorInteractionCollection),
+        typeof(UserStyleBehaviorCollection),
+        typeof(UserStyleBehaviorCollection),
           new PropertyMetadata((sender, e) =>
           {
             if (e.OldValue == e.NewValue) { return; }
 
-            var value = e.NewValue as BehaviorInteractionCollection;
+            var value = e.NewValue as UserStyleBehaviorCollection;
             if (value == null) { return; }
 
             var behaviors = Interaction.GetBehaviors(sender);
@@ -50,29 +50,29 @@ namespace CustomizedDataGrid001
             }
           }));
 
-    public static BehaviorInteractionCollection GetGeneratedCellBehaviors(DependencyObject obj)
+    public static UserStyleBehaviorCollection GetGeneratedCellBehaviors(DependencyObject obj)
     {
-      return (BehaviorInteractionCollection)obj.GetValue(GeneratedCellBehaviorsProperty);
+      return (UserStyleBehaviorCollection)obj.GetValue(GeneratedCellBehaviorsProperty);
     }
 
-    public static BehaviorInteractionCollection GetGeneratedEditingCellBehaviors(DependencyObject obj)
+    public static UserStyleBehaviorCollection GetGeneratedEditingCellBehaviors(DependencyObject obj)
     {
-      return (BehaviorInteractionCollection)obj.GetValue(GeneratedEditingCellBehaviorsProperty);
+      return (UserStyleBehaviorCollection)obj.GetValue(GeneratedEditingCellBehaviorsProperty);
     }
     
-    public static void SetGeneratedCellBehaviors(DependencyObject obj, BehaviorInteractionCollection value)
+    public static void SetGeneratedCellBehaviors(DependencyObject obj, UserStyleBehaviorCollection value)
     {
       obj.SetValue(GeneratedCellBehaviorsProperty, value);
     }
 
-    public static void SetGeneratedEditingCellBehaviors(DependencyObject obj, BehaviorInteractionCollection value)
+    public static void SetGeneratedEditingCellBehaviors(DependencyObject obj, UserStyleBehaviorCollection value)
     {
       obj.SetValue(GeneratedEditingCellBehaviorsProperty, value);
     }
 
     protected override Freezable CreateInstanceCore()
     {
-      return new BehaviorInteractionCollection();
+      return new UserStyleBehaviorCollection();
     }
 
   }

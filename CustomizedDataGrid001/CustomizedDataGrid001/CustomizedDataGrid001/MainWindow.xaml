@@ -28,31 +28,31 @@
       </local:BehaviorTextColumn>
 
 
-      <local:BehaviorInteractionTextColumn Header="Behavior Interactionの列"
-                               Binding="{Binding BehaviorInteractionItem}">
-        <local:BehaviorInteractionTextColumn.CellStyle>
+      <local:UserStyleBehaviorTextColumn Header="UserStyleBehaviorの列"
+                               Binding="{Binding UserStyleBehaviorItem}">
+        <local:UserStyleBehaviorTextColumn.CellStyle>
           <Style TargetType="{x:Type DataGridCell}">
-            <Setter Property="local:BehaviorInteractionCollection.GeneratedCellBehaviors">
+            <Setter Property="local:UserStyleBehaviorCollection.GeneratedCellBehaviors">
               <Setter.Value>
-                <local:BehaviorInteractionCollection>
+                <local:UserStyleBehaviorCollection>
                   <local:KeyEscapeBehavior />
-                </local:BehaviorInteractionCollection>
+                </local:UserStyleBehaviorCollection>
               </Setter.Value>
             </Setter>
           </Style>
-        </local:BehaviorInteractionTextColumn.CellStyle>
-        <local:BehaviorInteractionTextColumn.CellEditingStyle>
+        </local:UserStyleBehaviorTextColumn.CellStyle>
+        <local:UserStyleBehaviorTextColumn.CellEditingStyle>
           <Style TargetType="{x:Type TextBox}">
-            <Setter Property="local:BehaviorInteractionCollection.GeneratedEditingCellBehaviors">
+            <Setter Property="local:UserStyleBehaviorCollection.GeneratedEditingCellBehaviors">
               <Setter.Value>
-                <local:BehaviorInteractionCollection>
+                <local:UserStyleBehaviorCollection>
                   <local:KeyOnlyNumericBehavior />
-                </local:BehaviorInteractionCollection>
+                </local:UserStyleBehaviorCollection>
               </Setter.Value>
             </Setter>
           </Style>
-        </local:BehaviorInteractionTextColumn.CellEditingStyle>
-      </local:BehaviorInteractionTextColumn>
+        </local:UserStyleBehaviorTextColumn.CellEditingStyle>
+      </local:UserStyleBehaviorTextColumn>
     </DataGrid.Columns>
   </DataGrid>
 </Window>

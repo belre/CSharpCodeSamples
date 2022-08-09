@@ -27,35 +27,16 @@ namespace CustomizedDataGrid001
           DefaultItem = "デフォルト",
           CodeBehindItem = "コードビハインド", 
           BehaviorItem = "ビヘイビア",
-          BehaviorInteractionItem = "ビヘイビアインタラクション",
+          UserStyleBehaviorItem = "ビヘイビアインタラクション",
         },
         new BranchViewModel()
         {
           DefaultItem = "DEFAULT",
           CodeBehindItem = "CODEBEHIND",
           BehaviorItem = "BEHAVIOR",
-          BehaviorInteractionItem = "BEHAVIOR INTERACTION",
+          UserStyleBehaviorItem = "BEHAVIOR INTERACTION",
         }
       };
-    }
-
-
-
-
-    public void ProhibitEsc()
-    {
-
-    }
-
-    private ICommand _command_key_down;
-    public ICommand CommandKeyDown
-    {
-      get => _command_key_down ?? (_command_key_down = new DelegateCommand<object>(RunKeyDownEvent));
-    }
-
-    public void RunKeyDownEvent(object param)
-    {
-
     }
   }
 }

@@ -31,9 +31,9 @@ namespace DataGridViewOptimization
       {
         lines.Add(new SimpleDataLine()
         {
-          Number = i.ToString(),
+          Number = i,
           Name = (new string[10]).Aggregate(string.Empty, (str, a) => str + (char)(rand.Next('Z' - 'A' + 1) + 'A')),
-          DateTime = DateTime.Now.AddDays(i).ToString("yyyy/MM/dd HH:mm:ss")
+          DateTime = DateTime.Now.AddDays(i)
         });
       }
 

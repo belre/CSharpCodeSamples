@@ -27,15 +27,27 @@ namespace DataGridViewOptimization
 
     private void button1_Click(object sender, EventArgs e)
     {
-      dataGridView1.VirtualMode = CheckBoxVirtualMode.Checked;
 
       var stopwatch = new Stopwatch();
 
-      TableBindingSource.DataSource = null;
+      
+      Task.Delay(200);
 
       stopwatch.Start();
+      if (CheckBoxDisableAutoBind.Checked)
+      {
+        TableBindingSource.RaiseListChangedEvents = false;
+        TableBindingSource.SuspendBinding();
+      }
 
       TableBindingSource.DataSource = Lines;
+
+      if (CheckBoxDisableAutoBind.Checked)
+      {
+        TableBindingSource.RaiseListChangedEvents = true;
+        TableBindingSource.ResumeBinding();
+        TableBindingSource.ResetBindings(false);
+      }
 
       stopwatch.Stop();
       LabelStopWatch.Text = $"{stopwatch.ElapsedMilliseconds} ms";
@@ -50,12 +62,19 @@ namespace DataGridViewOptimization
     }
 
     int _clicked_column_number = -1;
+    int _clicked_row_number = -1;
 
     private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
     {
       if(e.RowIndex < 0 && e.ColumnIndex >= 0)
       {
+        _clicked_row_number = -1;
         _clicked_column_number = e.ColumnIndex;
+      }
+      else if(e.RowIndex >= 0 && e.ColumnIndex < 0)
+      {
+        _clicked_row_number = e.RowIndex;
+        _clicked_column_number = -1;
       }
     }
 
@@ -68,8 +87,14 @@ namespace DataGridViewOptimization
 
     private void dataGridView1_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
     {
-      e.ContextMenuStrip = ColumnContextMenu;
-      _clicked_column_number = e.ColumnIndex;
+      if(e.RowIndex >= 0 && e.ColumnIndex < 0)
+      {
+        e.ContextMenuStrip = RowContextMenu;
+      }
+      else if(e.ColumnIndex >= 0 && e.RowIndex < 0)
+      {
+        e.ContextMenuStrip = ColumnContextMenu;
+      }
     }
 
 
@@ -163,6 +188,46 @@ namespace DataGridViewOptimization
       {
         target_item.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
       }
+    }
+
+    private void insertEmptyLineToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      if(dataGridView1.SelectedRows.Count >= 1)
+      {
+        var index_list = new List<int>();
+        for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+        {
+          index_list.Add(dataGridView1.SelectedRows[i].Index);
+        }
+
+
+        var index = index_list.Min();
+
+        for(int i = 0; i < index_list.Count(); i++)
+        {
+          TableBindingSource.Insert(index, new SimpleDataLine());
+        }
+      }
+    }
+
+    private void toolStripMenuItem2_Click(object sender, EventArgs e)
+    {
+      if (dataGridView1.SelectedRows.Count >= 1)
+      {
+        var index_list = new List<int>();
+        for(int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+        {
+          index_list.Add(dataGridView1.SelectedRows[i].Index);
+        }
+        var sorted_index_list = index_list.OrderByDescending(c => c);
+
+
+        foreach(var sorted_index in sorted_index_list)
+        {
+          TableBindingSource.RemoveAt(sorted_index);
+        }
+      }
+
     }
   }
 }

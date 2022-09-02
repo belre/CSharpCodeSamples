@@ -43,7 +43,7 @@ namespace DataGridViewOptimization
       {
         dataGridView1.Rows.Add(new[]
         {
-          line.Number, line.Name, line.DateTime
+          line.Number.ToString(), line.Name, line.DateTime.ToString("yyyy/MM/dd HH:mm:SS")
         });
       }
 

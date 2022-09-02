@@ -32,9 +32,6 @@
       this.LabelStopWatch = new System.Windows.Forms.Label();
       this.button1 = new System.Windows.Forms.Button();
       this.dataGridView1 = new System.Windows.Forms.DataGridView();
-      this.panel1 = new System.Windows.Forms.Panel();
-      this.panel2 = new System.Windows.Forms.Panel();
-      this.panel3 = new System.Windows.Forms.Panel();
       this.ColumnContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.autoSizeModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.notSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,16 +42,24 @@
       this.displayCellsExceptHeaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.displayCellsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.fillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.panel2 = new System.Windows.Forms.Panel();
+      this.panel3 = new System.Windows.Forms.Panel();
+      this.RowContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+      this.insertEmptyLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.TableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.CheckBoxVirtualMode = new System.Windows.Forms.CheckBox();
+      this.CheckBoxDisableAutoBind = new System.Windows.Forms.CheckBox();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+      this.ColumnContextMenu.SuspendLayout();
       this.panel1.SuspendLayout();
       this.panel2.SuspendLayout();
       this.panel3.SuspendLayout();
-      this.ColumnContextMenu.SuspendLayout();
+      this.RowContextMenu.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.TableBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
@@ -96,34 +101,6 @@
       this.dataGridView1.CellContextMenuStripChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContextMenuStripChanged);
       this.dataGridView1.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dataGridView1_CellContextMenuStripNeeded);
       this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
-      // 
-      // panel1
-      // 
-      this.panel1.Controls.Add(this.CheckBoxVirtualMode);
-      this.panel1.Controls.Add(this.button1);
-      this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-      this.panel1.Location = new System.Drawing.Point(0, 0);
-      this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(966, 72);
-      this.panel1.TabIndex = 6;
-      // 
-      // panel2
-      // 
-      this.panel2.Controls.Add(this.LabelStopWatch);
-      this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.panel2.Location = new System.Drawing.Point(0, 658);
-      this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(966, 56);
-      this.panel2.TabIndex = 7;
-      // 
-      // panel3
-      // 
-      this.panel3.Controls.Add(this.dataGridView1);
-      this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.panel3.Location = new System.Drawing.Point(0, 72);
-      this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(966, 586);
-      this.panel3.TabIndex = 8;
       // 
       // ColumnContextMenu
       // 
@@ -204,6 +181,64 @@
       this.fillToolStripMenuItem.Text = "Fill";
       this.fillToolStripMenuItem.Click += new System.EventHandler(this.AutoSizeModeToolStripMenuItem_Click);
       // 
+      // panel1
+      // 
+      this.panel1.Controls.Add(this.CheckBoxDisableAutoBind);
+      this.panel1.Controls.Add(this.button1);
+      this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+      this.panel1.Location = new System.Drawing.Point(0, 0);
+      this.panel1.Name = "panel1";
+      this.panel1.Size = new System.Drawing.Size(966, 72);
+      this.panel1.TabIndex = 6;
+      // 
+      // panel2
+      // 
+      this.panel2.Controls.Add(this.LabelStopWatch);
+      this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.panel2.Location = new System.Drawing.Point(0, 658);
+      this.panel2.Name = "panel2";
+      this.panel2.Size = new System.Drawing.Size(966, 56);
+      this.panel2.TabIndex = 7;
+      // 
+      // panel3
+      // 
+      this.panel3.Controls.Add(this.dataGridView1);
+      this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.panel3.Location = new System.Drawing.Point(0, 72);
+      this.panel3.Name = "panel3";
+      this.panel3.Size = new System.Drawing.Size(966, 586);
+      this.panel3.TabIndex = 8;
+      // 
+      // RowContextMenu
+      // 
+      this.RowContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+      this.RowContextMenu.Name = "RowContextMenu";
+      this.RowContextMenu.Size = new System.Drawing.Size(101, 48);
+      // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insertEmptyLineToolStripMenuItem});
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      this.toolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
+      this.toolStripMenuItem1.Text = "挿入";
+      // 
+      // toolStripMenuItem2
+      // 
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      this.toolStripMenuItem2.Size = new System.Drawing.Size(100, 22);
+      this.toolStripMenuItem2.Text = "削除";
+      this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+      // 
+      // insertEmptyLineToolStripMenuItem
+      // 
+      this.insertEmptyLineToolStripMenuItem.Name = "insertEmptyLineToolStripMenuItem";
+      this.insertEmptyLineToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+      this.insertEmptyLineToolStripMenuItem.Text = "空白行";
+      this.insertEmptyLineToolStripMenuItem.Click += new System.EventHandler(this.insertEmptyLineToolStripMenuItem_Click);
+      // 
       // numberDataGridViewTextBoxColumn
       // 
       this.numberDataGridViewTextBoxColumn.ContextMenuStrip = this.ColumnContextMenu;
@@ -229,15 +264,15 @@
       // 
       this.TableBindingSource.DataSource = typeof(DataGridViewOptimization.GridDataModel.SimpleDataLine);
       // 
-      // CheckBoxVirtualMode
+      // CheckBoxDisableAutoBind
       // 
-      this.CheckBoxVirtualMode.AutoSize = true;
-      this.CheckBoxVirtualMode.Location = new System.Drawing.Point(146, 37);
-      this.CheckBoxVirtualMode.Name = "CheckBoxVirtualMode";
-      this.CheckBoxVirtualMode.Size = new System.Drawing.Size(89, 16);
-      this.CheckBoxVirtualMode.TabIndex = 4;
-      this.CheckBoxVirtualMode.Text = "Virtual Mode";
-      this.CheckBoxVirtualMode.UseVisualStyleBackColor = true;
+      this.CheckBoxDisableAutoBind.AutoSize = true;
+      this.CheckBoxDisableAutoBind.Location = new System.Drawing.Point(159, 37);
+      this.CheckBoxDisableAutoBind.Name = "CheckBoxDisableAutoBind";
+      this.CheckBoxDisableAutoBind.Size = new System.Drawing.Size(140, 16);
+      this.CheckBoxDisableAutoBind.TabIndex = 4;
+      this.CheckBoxDisableAutoBind.Text = "自動的なバインドを抑制";
+      this.CheckBoxDisableAutoBind.UseVisualStyleBackColor = true;
       // 
       // DataGridViewBindingSource
       // 
@@ -250,12 +285,13 @@
       this.Name = "DataGridViewBindingSource";
       this.Text = "DataGridViewBindingSource";
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+      this.ColumnContextMenu.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
       this.panel2.ResumeLayout(false);
       this.panel2.PerformLayout();
       this.panel3.ResumeLayout(false);
-      this.ColumnContextMenu.ResumeLayout(false);
+      this.RowContextMenu.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.TableBindingSource)).EndInit();
       this.ResumeLayout(false);
 
@@ -283,6 +319,10 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
-    private System.Windows.Forms.CheckBox CheckBoxVirtualMode;
+    private System.Windows.Forms.ContextMenuStrip RowContextMenu;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem insertEmptyLineToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+    private System.Windows.Forms.CheckBox CheckBoxDisableAutoBind;
   }
 }

@@ -8,7 +8,7 @@ namespace DataGridViewOptimization.GridDataModel
 {
   public class SimpleDataLine
   {
-    public string Number
+    public int Number
     {
       get;
       set;
@@ -20,7 +20,7 @@ namespace DataGridViewOptimization.GridDataModel
       set;
     }
 
-    public string DateTime
+    public DateTime DateTime
     {
       get;
       set;

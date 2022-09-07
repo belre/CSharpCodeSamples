@@ -1,0 +1,42 @@
+﻿<Window x:Class="ContextMenuKeyHandle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:user_bh="clr-namespace:ContextMenuKeyHandle.Behaviors"
+        xmlns:local="clr-namespace:ContextMenuKeyHandle"
+        xmlns:vm="clr-namespace:ContextMenuKeyHandle.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="150" Width="400">
+
+  <Window.DataContext>
+    <vm:MainViewModel />
+  </Window.DataContext>
+
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="3*"/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Button Content="Launch ContextMenu" HorizontalAlignment="Left" Margin="50,54,0,0" VerticalAlignment="Top" Height="25" Width="155">
+      <Button.ContextMenu>
+        <ContextMenu ItemsSource="{Binding MenuItems}">
+          <bh:Interaction.Behaviors>
+            <user_bh:ContextMenuKeyHandleBehavior CommandKeyHandle="{Binding CommandKeyHandle}" />
+          </bh:Interaction.Behaviors>
+          <ContextMenu.ItemContainerStyle>
+            <Style TargetType="MenuItem">
+              <Setter Property="Header" Value="{Binding MenuText}" />
+              <Setter Property="InputGestureText" Value="{Binding KeyGesture}"></Setter>
+              <Setter Property="Command" Value="{Binding ClickCommand}"></Setter>
+            </Style>
+          </ContextMenu.ItemContainerStyle>
+        </ContextMenu>
+      </Button.ContextMenu>
+    </Button>
+    <TextBlock Text="{Binding CurrentText}"
+               HorizontalAlignment="Left" Margin="241,54,0,0" TextWrapping="Wrap"
+               VerticalAlignment="Top" Grid.ColumnSpan="2" Width="109"/>
+  </Grid>
+</Window>

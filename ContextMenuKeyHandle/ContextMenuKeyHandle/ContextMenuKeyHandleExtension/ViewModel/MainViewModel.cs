@@ -9,7 +9,7 @@ using Microsoft.Xaml.Behaviors.Core;
 using Prism.Commands;
 using Prism.Mvvm;
 
-namespace ContextMenuKeyHandle.ViewModel
+namespace ContextMenuKeyHandleExtension.ViewModel
 {
   public class MainViewModel : BindableBase
   {

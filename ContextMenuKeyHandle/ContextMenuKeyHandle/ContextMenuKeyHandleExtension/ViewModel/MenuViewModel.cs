@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace ContextMenuKeyHandle.ViewModel
+namespace ContextMenuKeyHandleExtension.ViewModel
 {
   public class MenuViewModel
   {

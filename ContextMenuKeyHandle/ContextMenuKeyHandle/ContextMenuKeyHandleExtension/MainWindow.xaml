@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContextMenuKeyHandleExtension"
-        xmlns:user_bh="clr-namespace:ContextMenuKeyHandle.Behaviors"
+        xmlns:user_bh="clr-namespace:ContextMenuKeyHandleExtension.Behaviors"
         xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
-        xmlns:vm="clr-namespace:ContextMenuKeyHandle.ViewModel"
+        xmlns:vm="clr-namespace:ContextMenuKeyHandleExtension.ViewModel"
+        xmlns:user_module="clr-namespace:ContextMenuKeyHandleExtension.Module"
         mc:Ignorable="d"
         Title="MainWindow" Height="150" Width="400">
 
@@ -21,7 +22,7 @@
     </Grid.ColumnDefinitions>
     <Button Content="Launch ContextMenu" HorizontalAlignment="Left" Margin="50,54,0,0" VerticalAlignment="Top" Height="25" Width="155">
       <Button.ContextMenu>
-        <ContextMenu ItemsSource="{Binding MenuItems}">
+        <user_module:UserContextMenu ItemsSource="{Binding MenuItems}">
           <b:Interaction.Behaviors>
             <user_bh:ContextMenuKeyHandleBehavior CommandKeyHandle="{Binding CommandKeyHandle}" />
           </b:Interaction.Behaviors>
@@ -32,7 +33,7 @@
               <Setter Property="Command" Value="{Binding ClickCommand}"></Setter>
             </Style>
           </ContextMenu.ItemContainerStyle>
-        </ContextMenu>
+        </user_module:UserContextMenu>
       </Button.ContextMenu>
     </Button>
     <TextBlock Text="{Binding CurrentText}"

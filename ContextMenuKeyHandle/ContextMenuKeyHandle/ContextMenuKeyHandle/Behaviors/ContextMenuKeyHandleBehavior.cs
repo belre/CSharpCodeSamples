@@ -49,6 +49,12 @@ namespace ContextMenuKeyHandle.Behaviors
 
     private void AssociatedObjectOnPreviewKeyDown(object sender, KeyEventArgs e)
     {
+      if (e.Key == Key.Escape)
+      {
+        AssociatedObject.IsOpen = false;
+        return;
+      }
+
       if (CommandKeyHandle != null && CommandKeyHandle.CanExecute(e))
       {
         CommandKeyHandle.Execute(e);

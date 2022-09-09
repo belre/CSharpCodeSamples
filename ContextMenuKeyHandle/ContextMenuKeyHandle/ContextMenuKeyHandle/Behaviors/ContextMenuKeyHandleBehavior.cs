@@ -35,7 +35,7 @@ namespace ContextMenuKeyHandle.Behaviors
     {
       base.OnAttached();
 
-      AssociatedObject.PreviewKeyDown += AssociatedObjectOnPreviewKeyDown;
+      AssociatedObject.KeyDown += AssociatedObjectOnKeyDown;
     }
 
 
@@ -43,11 +43,11 @@ namespace ContextMenuKeyHandle.Behaviors
     {
       base.OnDetaching();
 
-      AssociatedObject.PreviewKeyDown -= AssociatedObjectOnPreviewKeyDown;
+      AssociatedObject.KeyDown -= AssociatedObjectOnKeyDown;
     }
 
 
-    private void AssociatedObjectOnPreviewKeyDown(object sender, KeyEventArgs e)
+    private void AssociatedObjectOnKeyDown(object sender, KeyEventArgs e)
     {
       if (e.Key == Key.Escape)
       {

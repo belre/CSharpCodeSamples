@@ -74,5 +74,12 @@ namespace DataGridViewOptimization
       CreateLines();
 
     }
+
+    private void button4_Click(object sender, EventArgs e)
+    {
+      var dialog = new DataGridViewUpdate();
+      dialog.Lines = Lines;
+      dialog.ShowDialog();
+    }
   }
 }

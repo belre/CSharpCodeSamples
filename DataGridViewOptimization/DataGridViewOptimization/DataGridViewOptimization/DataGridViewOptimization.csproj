@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataGridViewUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridViewUpdate.Designer.cs">
+      <DependentUpon>DataGridViewUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataGridViewBindingSource.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="GridDataModel\SimpleDataLine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DataGridViewUpdate.resx">
+      <DependentUpon>DataGridViewUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataGridViewBindingSource.resx">
       <DependentUpon>DataGridViewBindingSource.cs</DependentUpon>
     </EmbeddedResource>

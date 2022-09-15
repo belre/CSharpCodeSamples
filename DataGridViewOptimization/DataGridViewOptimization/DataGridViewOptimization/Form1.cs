@@ -79,7 +79,7 @@ namespace DataGridViewOptimization
     {
       var dialog = new DataGridViewUpdate();
       dialog.Lines = Lines;
-      dialog.ShowDialog();
+      dialog.Show();
     }
   }
 }

@@ -73,6 +73,9 @@
     <Compile Include="GridDataModel\SimpleDataLine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="DataGridViewUpdate.resx">
       <DependentUpon>DataGridViewUpdate.cs</DependentUpon>
     </EmbeddedResource>

@@ -33,7 +33,7 @@
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.LabelStopWatch = new System.Windows.Forms.Label();
       this.button1 = new System.Windows.Forms.Button();
-      this.dataGridView1 = new System.Windows.Forms.DataGridView();
+      this.dataGridView1 = new UserDataGridView();
       this.panel1 = new System.Windows.Forms.Panel();
       this.CheckBoxDisableAutoBind = new System.Windows.Forms.CheckBox();
       this.panel2 = new System.Windows.Forms.Panel();
@@ -89,7 +89,7 @@
       dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
       this.dataGridView1.RowTemplate.Height = 35;
-      this.dataGridView1.Size = new System.Drawing.Size(966, 478);
+      this.dataGridView1.Size = new System.Drawing.Size(784, 633);
       this.dataGridView1.TabIndex = 5;
       this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
       // 
@@ -100,7 +100,7 @@
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel1.Location = new System.Drawing.Point(0, 0);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(966, 72);
+      this.panel1.Size = new System.Drawing.Size(784, 72);
       this.panel1.TabIndex = 6;
       // 
       // CheckBoxDisableAutoBind
@@ -117,9 +117,9 @@
       // 
       this.panel2.Controls.Add(this.LabelStopWatch);
       this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.panel2.Location = new System.Drawing.Point(0, 550);
+      this.panel2.Location = new System.Drawing.Point(0, 705);
       this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(966, 56);
+      this.panel2.Size = new System.Drawing.Size(784, 56);
       this.panel2.TabIndex = 7;
       // 
       // panel3
@@ -128,7 +128,7 @@
       this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
       this.panel3.Location = new System.Drawing.Point(0, 72);
       this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(966, 478);
+      this.panel3.Size = new System.Drawing.Size(784, 633);
       this.panel3.TabIndex = 8;
       // 
       // numberDataGridViewTextBoxColumn
@@ -162,7 +162,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(966, 606);
+      this.ClientSize = new System.Drawing.Size(784, 761);
       this.Controls.Add(this.panel3);
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.panel2);
@@ -183,7 +183,7 @@
 
     private System.Windows.Forms.Label LabelStopWatch;
     private System.Windows.Forms.Button button1;
-    private System.Windows.Forms.DataGridView dataGridView1;
+    private UserDataGridView dataGridView1;
     private System.Windows.Forms.BindingSource TableBindingSource;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Panel panel2;

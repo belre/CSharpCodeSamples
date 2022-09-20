@@ -78,6 +78,33 @@ namespace ScreenFontList
 
       [DllImport("gdi32.dll")]
       public static extern IntPtr GetStockObject(StockObjects fnObject);
+
+      public static void PreviewOnNonSmoothingFont(Action action)
+      {
+        ControlDrawing.SystemParametersInfo(ControlDrawing.SPI_SETFONTSMOOTHING, 0, IntPtr.Zero, 0);
+
+        Exception exp = null;
+        try
+        {
+          if (action != null)
+          {
+            action();
+          }
+        }
+        catch (Exception e)
+        {
+          exp = e;
+        }
+        finally
+        {
+          ControlDrawing.SystemParametersInfo(ControlDrawing.SPI_SETFONTSMOOTHING, 1, IntPtr.Zero, 0);
+        }
+
+        if (exp != null)
+        {
+          throw exp;
+        }
+      }
     }
   }
 

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlDrawing.cs" />
     <Compile Include="FontListGdi.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

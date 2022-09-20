@@ -32,9 +32,9 @@ namespace ScreenFontList
       this.components = new System.ComponentModel.Container();
       this.button1 = new System.Windows.Forms.Button();
       this.dataGridView1 = new System.Windows.Forms.DataGridView();
-      this.LogFontBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.textBox1 = new System.Windows.Forms.TextBox();
+      this.CheckBoxNonSmooth = new System.Windows.Forms.CheckBox();
       this.faceNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.widthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,9 +49,10 @@ namespace ScreenFontList
       this.clipPrecisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.qualityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.pitchAndFamilyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.LogFontBindingSource = new System.Windows.Forms.BindingSource(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LogFontBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.LogFontBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // button1
@@ -96,15 +97,9 @@ namespace ScreenFontList
       this.dataGridView1.TabIndex = 2;
       this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
       // 
-      // LogFontBindingSource
-      // 
-      this.LogFontBindingSource.AllowNew = false;
-      this.LogFontBindingSource.DataSource = typeof(ScreenFontList.LogFontWrapped);
-      this.LogFontBindingSource.CurrentChanged += new System.EventHandler(this.TriggerPreview);
-      // 
       // pictureBox1
       // 
-      this.pictureBox1.Location = new System.Drawing.Point(23, 573);
+      this.pictureBox1.Location = new System.Drawing.Point(23, 545);
       this.pictureBox1.Name = "pictureBox1";
       this.pictureBox1.Size = new System.Drawing.Size(1164, 152);
       this.pictureBox1.TabIndex = 3;
@@ -119,6 +114,17 @@ namespace ScreenFontList
       this.textBox1.Text = "Hello";
       this.textBox1.TextChanged += new System.EventHandler(this.TriggerPreview);
       // 
+      // CheckBoxNonSmooth
+      // 
+      this.CheckBoxNonSmooth.AutoSize = true;
+      this.CheckBoxNonSmooth.Location = new System.Drawing.Point(23, 704);
+      this.CheckBoxNonSmooth.Name = "CheckBoxNonSmooth";
+      this.CheckBoxNonSmooth.Size = new System.Drawing.Size(130, 20);
+      this.CheckBoxNonSmooth.TabIndex = 5;
+      this.CheckBoxNonSmooth.Text = "Non-Smoothing";
+      this.CheckBoxNonSmooth.UseVisualStyleBackColor = true;
+      this.CheckBoxNonSmooth.CheckedChanged += new System.EventHandler(this.TriggerPreview);
+      // 
       // faceNameDataGridViewTextBoxColumn
       // 
       this.faceNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -126,7 +132,7 @@ namespace ScreenFontList
       this.faceNameDataGridViewTextBoxColumn.HeaderText = "FaceName";
       this.faceNameDataGridViewTextBoxColumn.Name = "faceNameDataGridViewTextBoxColumn";
       this.faceNameDataGridViewTextBoxColumn.ReadOnly = true;
-      this.faceNameDataGridViewTextBoxColumn.Width = 104;
+      this.faceNameDataGridViewTextBoxColumn.Width = 103;
       // 
       // heightDataGridViewTextBoxColumn
       // 
@@ -165,7 +171,7 @@ namespace ScreenFontList
       this.weightDataGridViewTextBoxColumn.HeaderText = "Weight";
       this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
       this.weightDataGridViewTextBoxColumn.ReadOnly = true;
-      this.weightDataGridViewTextBoxColumn.Width = 77;
+      this.weightDataGridViewTextBoxColumn.Width = 76;
       // 
       // italicDataGridViewCheckBoxColumn
       // 
@@ -195,7 +201,7 @@ namespace ScreenFontList
       this.charSetDataGridViewTextBoxColumn.HeaderText = "CharSet";
       this.charSetDataGridViewTextBoxColumn.Name = "charSetDataGridViewTextBoxColumn";
       this.charSetDataGridViewTextBoxColumn.ReadOnly = true;
-      this.charSetDataGridViewTextBoxColumn.Width = 90;
+      this.charSetDataGridViewTextBoxColumn.Width = 89;
       // 
       // outPrecisionDataGridViewTextBoxColumn
       // 
@@ -204,7 +210,7 @@ namespace ScreenFontList
       this.outPrecisionDataGridViewTextBoxColumn.HeaderText = "OutPrecision";
       this.outPrecisionDataGridViewTextBoxColumn.Name = "outPrecisionDataGridViewTextBoxColumn";
       this.outPrecisionDataGridViewTextBoxColumn.ReadOnly = true;
-      this.outPrecisionDataGridViewTextBoxColumn.Width = 119;
+      this.outPrecisionDataGridViewTextBoxColumn.Width = 118;
       // 
       // clipPrecisionDataGridViewTextBoxColumn
       // 
@@ -213,7 +219,7 @@ namespace ScreenFontList
       this.clipPrecisionDataGridViewTextBoxColumn.HeaderText = "ClipPrecision";
       this.clipPrecisionDataGridViewTextBoxColumn.Name = "clipPrecisionDataGridViewTextBoxColumn";
       this.clipPrecisionDataGridViewTextBoxColumn.ReadOnly = true;
-      this.clipPrecisionDataGridViewTextBoxColumn.Width = 119;
+      this.clipPrecisionDataGridViewTextBoxColumn.Width = 118;
       // 
       // qualityDataGridViewTextBoxColumn
       // 
@@ -222,7 +228,7 @@ namespace ScreenFontList
       this.qualityDataGridViewTextBoxColumn.HeaderText = "Quality";
       this.qualityDataGridViewTextBoxColumn.Name = "qualityDataGridViewTextBoxColumn";
       this.qualityDataGridViewTextBoxColumn.ReadOnly = true;
-      this.qualityDataGridViewTextBoxColumn.Width = 80;
+      this.qualityDataGridViewTextBoxColumn.Width = 79;
       // 
       // pitchAndFamilyDataGridViewTextBoxColumn
       // 
@@ -231,13 +237,20 @@ namespace ScreenFontList
       this.pitchAndFamilyDataGridViewTextBoxColumn.HeaderText = "PitchAndFamily";
       this.pitchAndFamilyDataGridViewTextBoxColumn.Name = "pitchAndFamilyDataGridViewTextBoxColumn";
       this.pitchAndFamilyDataGridViewTextBoxColumn.ReadOnly = true;
-      this.pitchAndFamilyDataGridViewTextBoxColumn.Width = 137;
+      this.pitchAndFamilyDataGridViewTextBoxColumn.Width = 136;
+      // 
+      // LogFontBindingSource
+      // 
+      this.LogFontBindingSource.AllowNew = false;
+      this.LogFontBindingSource.DataSource = typeof(ScreenFontList.LogFontWrapped);
+      this.LogFontBindingSource.CurrentChanged += new System.EventHandler(this.TriggerPreview);
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1243, 737);
+      this.Controls.Add(this.CheckBoxNonSmooth);
       this.Controls.Add(this.textBox1);
       this.Controls.Add(this.pictureBox1);
       this.Controls.Add(this.dataGridView1);
@@ -248,8 +261,8 @@ namespace ScreenFontList
       this.Text = "Form1";
       this.Load += new System.EventHandler(this.Form1_Load);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LogFontBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.LogFontBindingSource)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -275,6 +288,7 @@ namespace ScreenFontList
     private System.Windows.Forms.DataGridViewTextBoxColumn clipPrecisionDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn qualityDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn pitchAndFamilyDataGridViewTextBoxColumn;
+    private System.Windows.Forms.CheckBox CheckBoxNonSmooth;
   }
 }
 

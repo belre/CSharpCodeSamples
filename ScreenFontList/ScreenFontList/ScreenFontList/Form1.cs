@@ -98,6 +98,9 @@ namespace ScreenFontList
           IntPtr hDC = gr.GetHdc();
 
           var log_font = selected_log_font.RawLogFont;
+          log_font.lfQuality = FontListGdi.FontQuality.NONANTIALIASED_QUALITY;
+
+
           var hFont_2 = TextOutGdi.CreateFontIndirect(log_font);
 
           IntPtr hOldFont = TextOutGdi.SelectObject(hDC, hFont_2);

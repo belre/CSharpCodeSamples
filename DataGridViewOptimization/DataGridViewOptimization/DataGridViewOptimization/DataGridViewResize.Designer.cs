@@ -1,6 +1,6 @@
 ﻿namespace DataGridViewOptimization
 {
-  partial class DataGridViewUpdate
+  partial class DataGridViewResize
   {
     /// <summary>
     /// Required designer variable.
@@ -166,7 +166,7 @@
       this.Controls.Add(this.panel3);
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.panel2);
-      this.Name = "DataGridViewUpdate";
+      this.Name = "DataGridViewResize";
       this.Text = "DataGridViewBindingSource";
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
       this.panel1.ResumeLayout(false);

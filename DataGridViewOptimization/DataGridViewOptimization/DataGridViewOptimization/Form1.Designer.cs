@@ -90,11 +90,11 @@
       // 
       // button4
       // 
-      this.button4.Location = new System.Drawing.Point(194, 205);
+      this.button4.Location = new System.Drawing.Point(42, 222);
       this.button4.Name = "button4";
       this.button4.Size = new System.Drawing.Size(134, 60);
       this.button4.TabIndex = 4;
-      this.button4.Text = "画面更新関連";
+      this.button4.Text = "画面リサイズ";
       this.button4.UseVisualStyleBackColor = true;
       this.button4.Click += new System.EventHandler(this.button4_Click);
       // 

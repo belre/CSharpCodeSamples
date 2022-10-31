@@ -77,7 +77,7 @@ namespace DataGridViewOptimization
 
     private void button4_Click(object sender, EventArgs e)
     {
-      var dialog = new DataGridViewUpdate();
+      var dialog = new DataGridViewResize();
       dialog.Lines = Lines;
       dialog.Show();
     }

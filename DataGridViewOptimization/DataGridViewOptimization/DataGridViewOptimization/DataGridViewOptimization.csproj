@@ -33,8 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +47,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataGridViewResize.cs">
@@ -76,8 +80,11 @@
     <Compile Include="RepaintOptimizedDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserDataGridView.cs">
-      <SubType>Component</SubType>
+    <Compile Include="UserDataGridViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserDataGridViewControl.Designer.cs">
+      <DependentUpon>UserDataGridViewControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DataGridViewResize.resx">
       <DependentUpon>DataGridViewResize.cs</DependentUpon>
@@ -100,6 +107,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserDataGridViewControl.resx">
+      <DependentUpon>UserDataGridViewControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\DataGridViewOptimization.GridDataModel.SimpleDataLine.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

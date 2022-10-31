@@ -119,6 +119,7 @@
       this.Controls.Add(this.panel2);
       this.Name = "DataGridViewOnlyRowsAdd";
       this.Text = "DataGridViewOnlyRowsAdd";
+      this.Load += new System.EventHandler(this.DataGridViewOnlyRowsAdd_Load);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
       this.panel1.ResumeLayout(false);
       this.panel2.ResumeLayout(false);

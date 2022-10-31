@@ -12,10 +12,11 @@ namespace DataGridViewOptimization
   {
     public RepaintOptimizedDataGridView()
     {
-      IsEnableCellPaint = true;
+      IsEnableBorderPaint = true;
     }
 
-    public bool IsEnableCellPaint
+
+    public bool IsEnableBorderPaint
     {
       get;
       set;
@@ -25,7 +26,7 @@ namespace DataGridViewOptimization
     {
       base.OnRowPrePaint(e);
 
-      if (IsEnableCellPaint)
+      if (IsEnableBorderPaint)
       {
         e.PaintCells(e.ClipBounds, DataGridViewPaintParts.All);
         e.PaintHeader(DataGridViewPaintParts.Background

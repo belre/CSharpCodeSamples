@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataGridViewOptimization.GridDataModel;
 using System.Diagnostics;
+using System.Windows.Shapes;
 
 namespace DataGridViewOptimization
 {
@@ -19,39 +20,17 @@ namespace DataGridViewOptimization
       get;
       set;
     }
-    
-
-
     public DataGridViewResize()
     {
       InitializeComponent();
     }
 
 
+
+
     private void button1_Click(object sender, EventArgs e)
     {
-      var stopwatch = new Stopwatch();
-
-      Task.Delay(200);
-
-      stopwatch.Start();
-      if (CheckBoxResizeOptimized.Checked)
-      {
-        TableBindingSource.RaiseListChangedEvents = false;
-        TableBindingSource.SuspendBinding();
-      }
-
-      TableBindingSource.DataSource = Lines;
-
-      if (CheckBoxResizeOptimized.Checked)
-      {
-        TableBindingSource.RaiseListChangedEvents = true;
-        TableBindingSource.ResumeBinding();
-        TableBindingSource.ResetBindings(false);
-      }
-
-      stopwatch.Stop();
-      LabelStopWatch.Text = $"{stopwatch.ElapsedMilliseconds} ms";
+      userDataGridViewControl1.UpdateData();
     }
 
     private void LabelStopWatch_MouseClick(object sender, MouseEventArgs e)
@@ -69,7 +48,7 @@ namespace DataGridViewOptimization
     {
       if (CheckBoxResizeOptimized.Checked)
       {
-        dataGridView1.IsEnableCellPaint = false;
+        userDataGridViewControl1.EnableResizeMode();
       }
     }
 
@@ -77,13 +56,13 @@ namespace DataGridViewOptimization
     {
       if (CheckBoxResizeOptimized.Checked)
       {
-        dataGridView1.IsEnableCellPaint = true;
-        dataGridView1.Invalidate();
+        userDataGridViewControl1.DisableResizeMode();
       }
     }
 
-
-
-
+    private void DataGridViewResize_Load(object sender, EventArgs e)
+    {
+      userDataGridViewControl1.Lines = Lines;
+    }
   }
 }

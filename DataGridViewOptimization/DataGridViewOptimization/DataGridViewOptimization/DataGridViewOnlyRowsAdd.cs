@@ -59,5 +59,10 @@ namespace DataGridViewOptimization
         Clipboard.SetText(LabelStopWatch.Text);
       }
     }
+
+    private void DataGridViewOnlyRowsAdd_Load(object sender, EventArgs e)
+    {
+
+    }
   }
 }

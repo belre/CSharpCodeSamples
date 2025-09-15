@@ -30,7 +30,7 @@ namespace ScreenFontList
       public static readonly int BKMODE_TRANSPARENT = 1;
 
       [DllImport("gdi32.dll", CharSet = CharSet.Unicode)]
-      public static extern IntPtr CreateFontIndirect(FontListGdi.LOGFONT lf);
+      public static extern IntPtr CreateFontIndirect(Gdi32FontItem.LOGFONT lf);
 
 
       [DllImport("gdi32.dll")]

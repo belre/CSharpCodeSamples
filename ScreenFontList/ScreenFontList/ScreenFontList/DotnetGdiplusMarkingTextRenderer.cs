@@ -27,6 +27,7 @@ namespace ScreenFontList
     private RectangleF _fixedMargin;
     public RectangleF FixedMargin => _fixedMargin;
 
+
     public Rectangle RenderImageSize => new Rectangle()
     {
       Width = (int)Math.Ceiling(_fixedMargin.X + _renderLocation.Width),

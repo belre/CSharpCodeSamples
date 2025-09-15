@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScreenFontList.ctkpcmswcs.Native;
@@ -305,12 +306,14 @@ namespace ScreenFontList
 
             cropBitmap.Save(string.Format("{0}/{1}_{2}_{3}{4}", 
               path, 
-              renderer.RenderMethod, 
+              renderer.RenderMethod,
               fontProxy.FaceName,
               fontProxy.CharSet.ToString(), ".png"));
 
             cropBitmap.Dispose();
             bitmap.Dispose();
+
+            Console.WriteLine(fontProxy.FaceName);
           }
         }
       });
